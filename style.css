@@ -3,10 +3,6 @@ body {
     text-align: center;
 }
 
-hr {
-    width: 500px;
-}
-
 .stats-container {
     display: flex;
     justify-content: center;
@@ -155,11 +151,6 @@ hr {
     body {
         padding: 0 8px;
         text-align: center;
-    }
-
-    hr {
-        width: 100%;
-        max-width: 500px;
     }
 
     .stats-container {
