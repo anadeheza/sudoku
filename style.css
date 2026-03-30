@@ -1,0 +1,189 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+hr {
+    width: 500px;
+}
+
+.stats-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin: 15px 0;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.stat-label {
+    font-size: 16px;
+    font-weight: bold;
+    color: rgb(114, 84, 111);
+    margin-bottom: 5px;
+}
+
+#errores {
+    color: coral;
+    margin: 0;
+    font-size: 24px;
+}
+
+#tablero {
+    width: 450px;
+    height: 450px;
+
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.celda {
+    width: 48px;
+    height: 48px;
+    border: 1px solid rgb(176, 150, 215);
+
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#digitos {
+    width: 450px;
+    height: 50px;
+
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* Mobile responsive */
+@media (max-width: 600px) {
+    #tablero,
+    #digitos {
+        width: 100%;
+        max-width: 360px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .celda {
+        width: calc(100% / 9 - 2px);
+        height: calc(100% / 9 - 2px);
+        font-size: 16px;
+    }
+
+    .numero {
+        width: calc(100% / 9 - 4px);
+        height: calc(100% / 9 - 8px);
+        font-size: 18px;
+    }
+
+    #reset-btn, .win-message button {
+        width: 90%;
+        max-width: 280px;
+    }
+
+    .stats-container {
+        flex-direction: column;
+        gap: 10px;
+        margin: 10px auto;
+    }
+
+    .stat-item {
+        width: 90%;
+        max-width: 320px;
+    }
+}
+
+.numero {
+    width: 44px;
+    height: 44px;
+    border: 1px solid rgb(238, 170, 246);
+    margin: 2px;
+
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.numeroSeleccionado {
+    background-color: rgb(220, 171, 211);
+}
+
+.numeroCompleto {
+    background-color: rgb(200, 200, 200);
+    color: rgb(100, 100, 100);
+    border-color: rgb(100, 100, 100);
+}
+
+.celda-start {
+    background-color: rgb(249, 231, 244);
+}
+
+.horizontal-line {
+    border-bottom: 2px solid rgb(114, 84, 111);
+}
+
+.vertical-line {
+    border-right: 2px solid rgb(114, 84, 111);
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.win-message {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.win-message h1 {
+    color: rgb(185, 255, 176);
+}
+
+.win-message button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: rgb(220, 171, 211);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#reset-btn {
+    padding: 10px 20px;
+    background-color: rgb(238, 170, 246);
+    border: 1px solid rgb(114, 84, 111);
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.contador {
+    font-weight: bold;
+    color: rgb(114, 84, 111);
+    font-size: 24px;
+}
