@@ -183,11 +183,17 @@ body {
     #tablero {
         aspect-ratio: 1 / 1;
         margin: 0 auto;
+        width: min(90vw, 500px);
+
+        display: grid;
+        grid-template-columns: repeat(9, 1fr);
     }
 
     .celda {
         aspect-ratio: 1 / 1;
         font-size: 14px;
+        width: 100%;
+        box-sizing: border-box;
     }
 
     #digitos {
