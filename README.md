@@ -1,1 +1,2 @@
 # sudoku
+Made for people to have some old-fashioned fun. This html, css and javascript project is a simple game that everyone can play. To play, you only have to select the number that you wanna add to the board, if it's correct, it will be written on the tile selected, if not, errors are increased (by one, obviously), you don't have to be flash but how fun is it to test how fast you can solve each display? you can even compete with friends by using either a PC or a mobile phone and compare who solves it first!
