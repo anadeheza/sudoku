@@ -40,6 +40,7 @@ hr {
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
+    aspect-ratio: 1 / 1;
 }
 
 .celda {
@@ -152,7 +153,8 @@ hr {
 /* Mobile iPhone-friendly responsive */
 @media (max-width: 700px) {
     body {
-        padding: 0 10px;
+        padding: 0 8px;
+        text-align: center;
     }
 
     hr {
@@ -162,11 +164,16 @@ hr {
 
     .stats-container {
         flex-direction: row;
-        justify-content: space-between;
+        justify-content: center;
         width: 100%;
         max-width: 500px;
         margin: 10px auto;
         gap: 10px;
+    }
+
+    .stat-item {
+        width: 45%;
+        min-width: 130px;
     }
 
     .stat-item {
