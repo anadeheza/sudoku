@@ -63,45 +63,6 @@ hr {
     flex-wrap: wrap;
 }
 
-/* Mobile responsive */
-@media (max-width: 600px) {
-    #tablero,
-    #digitos {
-        width: 100%;
-        max-width: 360px;
-        margin: 0 auto;
-        text-align: center;
-    }
-
-    .celda {
-        width: calc(100% / 9 - 2px);
-        height: calc(100% / 9 - 2px);
-        font-size: 16px;
-    }
-
-    .numero {
-        width: calc(100% / 9 - 4px);
-        height: calc(100% / 9 - 8px);
-        font-size: 18px;
-    }
-
-    #reset-btn, .win-message button {
-        width: 90%;
-        max-width: 280px;
-    }
-
-    .stats-container {
-        flex-direction: column;
-        gap: 10px;
-        margin: 10px auto;
-    }
-
-    .stat-item {
-        width: 90%;
-        max-width: 320px;
-    }
-}
-
 .numero {
     width: 44px;
     height: 44px;
