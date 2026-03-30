@@ -33,15 +33,15 @@ var puzzles = [
     },
     {
         tablero: [
-            "5-4------",
-            "-7-1--3--",
+            "5-4--8---",
+            "67-1--3--",
             "----4-5--",
-            "-9-3-----",
+            "-5-7-----",
             "4-------1",
             "-----4-5-",
             "--1-3----",
             "--7--9-3-",
-            "------1-9"
+            "---2--1-9"
         ],
         solucion: [
             "534678912",
@@ -135,12 +135,102 @@ function setGame() {
 }
 
 function selectNumero() { 
+    // Removemos highlight anterior de todas las celdas
+    clearNumberHighlight();
+    clearRelatedHighlight();
+    
     if (numSelected != null) {
         numSelected.classList.remove("numeroSeleccionado");
     }
 
     numSelected = this;
     numSelected.classList.add("numeroSeleccionado");
+    
+    // Destacamos las filas, columnas y cajas donde aparece este numero
+    highlightRelatedCellsForNumber(numSelected.id);
+    // Color mas fuerte para la celda del numero seleccionado
+    highlightNumber(numSelected.id);
+}
+
+function highlightNumber(num) {
+    // Buscamos todas las celdas que contengan este numero
+    for (let r = 0; r < 9; r++) {
+        for (let c = 0; c < 9; c++) {
+            let celda = document.getElementById(r.toString() + "-" + c.toString());
+            if (celda.innerText == num) {
+                celda.classList.add("numero-destacado");
+            }
+        }
+    }
+}
+
+function clearNumberHighlight() {
+    // Sacamos la clase de destacado de todas las celdas
+    for (let r = 0; r < 9; r++) {
+        for (let c = 0; c < 9; c++) {
+            let celda = document.getElementById(r.toString() + "-" + c.toString());
+            celda.classList.remove("numero-destacado");
+        }
+    }
+}
+
+function highlightRelatedCells(row, col) {
+    // Destacar todas las celdas en la misma fila, columna y caja 3x3 para un numero seleccionado
+    for (let r = 0; r < 9; r++) {
+        for (let c = 0; c < 9; c++) {
+            let celda = document.getElementById(r.toString() + "-" + c.toString());
+            // Verificar si está en la misma fila o columna
+            if (r === row || c === col) {
+                celda.classList.add("celda-relacionada");
+            }
+            // Verificar si está en la misma caja 3x3
+            let boxRow = Math.floor(row / 3) * 3;
+            let boxCol = Math.floor(col / 3) * 3;
+            if (r >= boxRow && r < boxRow + 3 && c >= boxCol && c < boxCol + 3) {
+                celda.classList.add("celda-relacionada");
+            }
+        }
+    }
+}
+
+function highlightRelatedCellsForNumber(num) {
+    // Encontrar todas las celdas con este numero y destacar sus filas, columnas y cajas
+    for (let r = 0; r < 9; r++) {
+        for (let c = 0; c < 9; c++) {
+            let celda = document.getElementById(r.toString() + "-" + c.toString());
+            if (celda.innerText == num) {
+                // Destacar fila
+                for (let i = 0; i < 9; i++) {
+                    let cell = document.getElementById(r.toString() + "-" + i.toString());
+                    cell.classList.add("celda-relacionada");
+                }
+                // Destacar columna
+                for (let i = 0; i < 9; i++) {
+                    let cell = document.getElementById(i.toString() + "-" + c.toString());
+                    cell.classList.add("celda-relacionada");
+                }
+                // Destacar caja 3x3
+                let boxRow = Math.floor(r / 3) * 3;
+                let boxCol = Math.floor(c / 3) * 3;
+                for (let i = boxRow; i < boxRow + 3; i++) {
+                    for (let j = boxCol; j < boxCol + 3; j++) {
+                        let cell = document.getElementById(i.toString() + "-" + j.toString());
+                        cell.classList.add("celda-relacionada");
+                    }
+                }
+            }
+        }
+    }
+}
+
+function clearRelatedHighlight() {
+    // Remover la clase de destacado de todas las celdas
+    for (let r = 0; r < 9; r++) {
+        for (let c = 0; c < 9; c++) {
+            let celda = document.getElementById(r.toString() + "-" + c.toString());
+            celda.classList.remove("celda-relacionada");
+        }
+    }
 }
 
 function selectCelda() {
@@ -255,6 +345,7 @@ function initGame() {
 
     if (numSelected) {
         numSelected.classList.remove("numeroSeleccionado");
+        clearNumberHighlight();
         numSelected = null;
     }
     // Reseteamos el timer

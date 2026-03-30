@@ -77,6 +77,18 @@ body {
     background-color: rgb(220, 171, 211);
 }
 
+.numero-destacado.celda-relacionada {
+    background-color: rgb(252, 186, 206) !important;
+    opacity: 1 !important;
+    color: rgb(0, 0, 0) !important;
+    font-weight: bold !important;
+}
+
+.celda-relacionada {
+    background-color: rgba(249, 196, 199, 0.45);
+    opacity: 1;
+}
+
 .numeroCompleto {
     background-color: rgb(200, 200, 200);
     color: rgb(100, 100, 100);
