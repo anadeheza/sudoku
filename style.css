@@ -182,11 +182,11 @@ body {
 
     #tablero {
         aspect-ratio: 1 / 1;
+        margin: 0 auto;
     }
 
     .celda {
-        width: calc(100% / 9 - 2px);
-        height: calc(100% / 9 - 2px);
+        aspect-ratio: 1 / 1;
         font-size: 14px;
     }
 
