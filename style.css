@@ -151,7 +151,7 @@ hr {
 }
 
 /* Mobile iPhone-friendly responsive */
-@media (max-width: 700px) {
+@media (max-width: 600px) {
     body {
         padding: 0 8px;
         text-align: center;
@@ -189,23 +189,12 @@ hr {
         font-size: 20px;
     }
 
-    #tablero,
-    #digitos {
-        width: min(90vw, 360px);
-        max-width: 360px;
-        margin: 0 auto;
-    }
-
     #tablero {
         width: min(90vw, 360px);
         height: auto;
         max-width: 360px;
         aspect-ratio: 1 / 1;
-    }
-
-    #digitos {
-        width: min(90vw, 360px);
-        max-width: 360px;
+        margin: 0 auto;
     }
 
     .celda {
@@ -218,6 +207,9 @@ hr {
         height: auto;
         margin-top: 8px;
         justify-content: center;
+        width: min(90vw, 360px);
+        max-width: 360px;
+        margin: 0 auto;
     }
 
     .numero {
