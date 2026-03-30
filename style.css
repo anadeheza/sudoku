@@ -148,3 +148,80 @@ hr {
     color: rgb(114, 84, 111);
     font-size: 24px;
 }
+
+/* Mobile iPhone-friendly responsive */
+@media (max-width: 700px) {
+    body {
+        padding: 0 10px;
+    }
+
+    hr {
+        width: 100%;
+        max-width: 500px;
+    }
+
+    .stats-container {
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+        max-width: 500px;
+        margin: 10px auto;
+        gap: 10px;
+    }
+
+    .stat-item {
+        width: 48%;
+        background-color: rgba(249, 231, 244, 0.7);
+        border-radius: 8px;
+        padding: 8px;
+    }
+
+    .stat-label {
+        font-size: 14px;
+        margin-bottom: 4px;
+    }
+
+    #errores,
+    .contador {
+        font-size: 20px;
+    }
+
+    #tablero,
+    #digitos {
+        width: min(100vw, 360px);
+        max-width: 360px;
+        margin: 0 auto;
+    }
+
+    #tablero {
+        height: min(100vw, 360px);
+    }
+
+    .celda {
+        width: calc(100% / 9 - 2px);
+        height: calc(100% / 9 - 2px);
+        font-size: 16px;
+    }
+
+    #digitos {
+        height: auto;
+        margin-top: 8px;
+        justify-content: center;
+    }
+
+    .numero {
+        width: calc(100% / 9 - 4px);
+        height: 36px;
+        margin: 1px;
+        font-size: 16px;
+    }
+
+    #reset-btn,
+    .win-message button {
+        width: min(92vw, 320px);
+        max-width: 320px;
+        padding: 12px 16px;
+        font-size: 16px;
+    }
+}
+
