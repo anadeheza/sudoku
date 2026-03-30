@@ -181,8 +181,6 @@ body {
     }
 
     #tablero {
-        width: auto;
-        height: auto;
         aspect-ratio: 1 / 1;
         margin: 0 auto;
     }
